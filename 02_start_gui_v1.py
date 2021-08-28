@@ -41,6 +41,7 @@ class Start:
 
     def to_play (self):
         print("you chose play button")
+        Game()
 
     def to_help (self):
         print("you chose help button")
@@ -85,9 +86,11 @@ class Game:
         self.bottom_right_answer_button.grid(column=1, row=1)
 
     def reveal_answer(self, location):
-        # Print corresponding number based on location
         # TL = 0 TR =1 BL = 2 BR = 3
         print(location)
+
+    def question_maker(self):
+        print("hello world")
 
 # main routine
 if __name__ == "__main__":
