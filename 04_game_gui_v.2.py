@@ -10,9 +10,9 @@ class Start:
         self.start_frame.grid()
 
         # Country Capital Quiz Heading row 0
-        self.capital_label = Label (self.start_frame, text="Movies and Directors Quiz",
+        self.movies_label = Label (self.start_frame, text="Movies and Directors Quiz",
                                     font= "Helvetica 20 bold")
-        self.capital_label.grid(row=0)
+        self.movies_label.grid(row=0)
 
         # to_game button row 1
         self.play_button = Button(text="Play", command= self.to_game)
@@ -170,7 +170,7 @@ class Game:
 # main routine
 if __name__ == "__main__":
     root = Tk()
-    root.title("Country Quiz")
+    root.title("Movies and Directors Quiz")
     something = Start()
     root.mainloop()
 
