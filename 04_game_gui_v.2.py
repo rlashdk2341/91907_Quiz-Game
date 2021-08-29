@@ -9,10 +9,10 @@ class Start:
         self.start_frame = Frame(padx=10, pady=10)
         self.start_frame.grid()
 
-        # Country Capital Quiz Heading row 0
-        self.movies_label = Label (self.start_frame, text="Movies and Directors Quiz",
+        # Heading row 0
+        self.director_label = Label (self.start_frame, text="Movies and Directors Quiz",
                                     font= "Helvetica 20 bold")
-        self.movies_label.grid(row=0)
+        self.director_label.grid(row=0)
 
         # to_game button row 1
         self.play_button = Button(text="Play", command= self.to_game)
@@ -60,10 +60,10 @@ class Game:
         self.game_frame = Frame(self.game_box)
         self.game_frame.grid(padx=10, pady=10)
 
-        # Capital Label row 0
-        self.capital_label = Label(self.game_frame, text=self.question,
+        # Director Label row 0
+        self.director_label = Label(self.game_frame, text=self.question,
                                    font="Helvetica 15 bold")
-        self.capital_label.grid(row=0)
+        self.director_label.grid(row=0)
 
         # Label showing correct or incorrect row 1
         self.answer_box = Label(self.game_frame, text="", font="Helvetica 14 italic", width=35, wrap=300)
@@ -146,6 +146,7 @@ class Game:
         self.next_button.config(state=DISABLED)
         self.answer_box.config(text="")
 
+
         question_ans = random.choice(list)
         yes = random.choice(list)
         no = random.choice(list)
@@ -158,7 +159,14 @@ class Game:
         incorrect3 = ok[0]
         print(question_ans)
 
-        self.capital_label.config(text=self.question)
+        self.director_label.config(text=self.question)
+
+        button_list = [self.answer, incorrect1, incorrect2, incorrect3]
+        random.shuffle(button_list)
+        self.top_left = button_list[0]
+        self.top_right = button_list[1]
+        self.bottom_left = button_list[2]
+        self.bottom_right = button_list[3]
 
         # Defining the randomized list to their corresponding buttons
         self.top_left_answer_button.config(text=self.top_left, command=lambda: self.reveal_answer(self.top_left))
@@ -174,3 +182,4 @@ if __name__ == "__main__":
     something = Start()
     root.mainloop()
 
+random.shuffle(button_list)
