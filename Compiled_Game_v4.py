@@ -17,10 +17,10 @@ class Start:
         self.books_label.grid(row=0)
 
         # Instructions for the game row 1
-        self.instruction_label = Label(self.start_frame, text="How well do you know about authors and its books? \n\n"
-                                                              "You'll be presented with authors from a list of 212.\n"
-                                                              "You'll need to match the authors with their "
-                                                              "books. \n\n "
+        self.instruction_label = Label(self.start_frame, text="How well do you know about movies and its authors? \n\n"
+                                                              "You'll be presented with authors from a list of 1000.\n"
+                                                              "You'll need to match the movies with their "
+                                                              "authors. \n\n "
                                                               "Please press Play button to play the game.",
                                        font="Arial 10", bg=background)
         self.instruction_label.grid(row=1)
@@ -48,12 +48,11 @@ class Start:
     def help(self):
         get_help = Help(self)
         get_help.help_text.configure(text="This quiz is about testing your knowledge for the \n"
-                                          "naming famous books and authors. \n\n"
-                                          "The name of the book will be given, \n"
-                                          "and you will have to answer the corresponding author. \n\n"
+                                          "naming famous movies and directors. \n\n"
+                                          "The name of the director will be given, \n"
+                                          "and you will have to answer the corresponding movie. \n\n"
                                           "This Quiz is a multiple choice quiz. \n\n"
                                           "I wish you best of luck and hope you enjoy this game.")
-
 
 class Help:
     def __init__(self, partner):
