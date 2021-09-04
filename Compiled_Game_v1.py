@@ -43,6 +43,7 @@ class Start:
     def to_play (self):
         print("you chose play button")
         Game()
+        self.start_frame.destroy()
 
 
 
