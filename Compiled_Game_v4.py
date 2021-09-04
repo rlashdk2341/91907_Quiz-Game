@@ -117,7 +117,6 @@ class Game:
         incorrect1 = yes[0]
         incorrect2 = no[0]
         incorrect3 = ok[0]
-        print(question_ans)
 
         button_list = [self.answer, incorrect1, incorrect2, incorrect3]
         random.shuffle(button_list)
@@ -230,7 +229,6 @@ class Game:
         incorrect1 = yes[0]
         incorrect2 = no[0]
         incorrect3 = ok[0]
-        print(question_ans)
 
         self.director_label.config(text=self.question)
 
@@ -357,7 +355,7 @@ class Export:
 
         # Save and Cancel buttons (row 0 of save_cancel_frame)
         self.save_button = Button(self.save_cancel_frame, text="Save", width=5,
-                                  command=partial(lambda: self.save_history(partner, history,difficulty,score,percentage,played)))
+                                  command=partial(lambda: self.save_history(partner, history,score,percentage,played)))
         self.save_button.grid(row=0, column=0,padx=5,pady=5)
 
         self.cancel_button = Button(self.save_cancel_frame, text="Cancel",width=5,
@@ -429,5 +427,3 @@ if __name__ == "__main__":
     root.title("Movies and Directors Quiz")
     something = Start()
     root.mainloop()
-
-random.shuffle(button_list)
