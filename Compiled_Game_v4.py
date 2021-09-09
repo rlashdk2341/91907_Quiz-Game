@@ -252,7 +252,7 @@ class End:
         background = "#FFF4C3"
 
         # Accuracy percentage
-        percentage= score/10
+        percentage= score * 10
 
         # End Frame
         self.end_box = Toplevel()
@@ -260,14 +260,14 @@ class End:
         self.end_frame.grid(row=0)
         self.end_box.protocol('WM_DELETE_WINDOW', self.to_quit)
 
-
+    
         # Heading row 0
         self.end_heading = Label(self.end_frame, text="Thanks for playing!", font= "Arial 19 bold", bg=background)
         self.end_heading.grid(row=0, padx=10)
 
         # Game statistics row 1
         self.end_stats = Label(self.end_frame, text="You have got \n {} \n correct out of \n 10 \n\n"
-                                                    "You have got {:.2f}%" .format(score,percentage),
+                                                    "You have got {:.2f}%" .format(score, percentage),
                                bg=background, font="Helvetica 10")
         self.end_stats.grid(row=1)
 
@@ -298,3 +298,4 @@ if __name__ == "__main__":
     root.title("Movies and Directors Quiz")
     something = Start()
     root.mainloop()
+
